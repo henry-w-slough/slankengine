@@ -3,7 +3,7 @@
 #include <SDL3/SDL.h>
 #include <string>
 
-#include "general/color.h"
+#include "utility/color.h"
 
 
 class Screen {
@@ -18,8 +18,10 @@ public:
     SDL_Window* window = nullptr;
     SDL_Renderer* renderer = nullptr;
 
-    Screen(int width, int height, std::string title = "slankengine game", Uint32 window_flags = 0, Uint32 renderer_flags = 0);
     void Update();
     void Destroy();
     void setBackgroundColor(RGBA color);
+    
+    Screen(int width, int height, std::string title = "slankengine game", Uint32 window_flags = 0, Uint32 renderer_flags = 0);
+    ~Screen();
 };

@@ -1,6 +1,6 @@
 #include <SDL3/SDL.h>
 #include "rendering/screen.h"
-#include "general/color.h"
+#include "utility/color.h"
 
 
 Screen::Screen(int width, int height, std::string title, Uint32 window_flags, Uint32 renderer_flags): 
@@ -9,6 +9,11 @@ Screen::Screen(int width, int height, std::string title, Uint32 window_flags, Ui
     title(title), 
     window(SDL_CreateWindow(title.c_str(), width, height, window_flags)), 
     renderer(SDL_CreateRenderer(window, nullptr)) {}
+
+
+Screen::~Screen() {
+    Destroy();
+}
 
 
 void Screen::Update() {
