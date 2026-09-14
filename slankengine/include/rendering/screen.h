@@ -7,8 +7,8 @@
 
 
 class Screen {
-public:
 
+public:
     const int width;
     const int height;
     std::string title;

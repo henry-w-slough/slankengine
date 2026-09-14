@@ -1,6 +1,6 @@
 #include "texture.h"
 
 
-Texture::Texture() {
-
-}
+Texture::Texture(float width, float height) :
+    width(width),
+    height(height) {}
