@@ -7,6 +7,8 @@ find_package(SDL3_image CONFIG REQUIRED)
 add_library(slankengine
     src/core.cpp
     src/rendering/screen.cpp
+    src/rendering/texture.cpp
+    src/physics/collider.cpp
 )
 
 target_include_directories(slankengine

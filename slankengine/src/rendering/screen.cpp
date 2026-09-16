@@ -25,9 +25,16 @@ void Screen::Update() {
             isRunning = false;
         }
         
-        //both needed for rendering refresh
+        //drawing backgroundColor for screen refresh
         SDL_SetRenderDrawColor(renderer, backgroundColor.red, backgroundColor.green, backgroundColor.blue, backgroundColor.alpha);
         SDL_RenderClear(renderer);
+
+        // for (auto& [name, layer] : layers) {
+        //     for (const auto& object : layer.getAllObjects()) {
+        //         SDL_RenderTexture(renderer, object->texture.get(), object->rect);
+        //     }
+        // }
+
         SDL_RenderPresent(renderer);
     }
 }
