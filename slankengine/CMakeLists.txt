@@ -8,6 +8,7 @@ add_library(slankengine
     src/core.cpp
     src/rendering/screen.cpp
     src/rendering/texture.cpp
+    src/rendering/layer.cpp
 )
 
 target_include_directories(slankengine
