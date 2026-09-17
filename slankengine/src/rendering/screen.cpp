@@ -2,7 +2,6 @@
 #include "rendering/screen.h"
 #include "utility/color.h"
 
-
 Screen::Screen(int width, int height, std::string title, Uint32 window_flags, Uint32 renderer_flags): 
     width(width), 
     height(height), 
@@ -28,12 +27,6 @@ void Screen::Update() {
         //drawing backgroundColor for screen refresh
         SDL_SetRenderDrawColor(renderer, backgroundColor.red, backgroundColor.green, backgroundColor.blue, backgroundColor.alpha);
         SDL_RenderClear(renderer);
-
-        // for (auto& [name, layer] : layers) {
-        //     for (const auto& object : layer.getAllObjects()) {
-        //         SDL_RenderTexture(renderer, object->texture.get(), object->rect);
-        //     }
-        // }
 
         SDL_RenderPresent(renderer);
     }

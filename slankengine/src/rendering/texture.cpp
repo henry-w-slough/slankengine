@@ -3,10 +3,8 @@
 #include <iostream>
 
 
-Texture::Texture(SDL_Renderer* renderer, float width, float height) :
-    renderer(renderer),
-    width(width),
-    height(height) {}
+Texture::Texture(SDL_Renderer* renderer) :
+    renderer(renderer) {}
 
 
 SDL_Texture* Texture::get() {

@@ -24,8 +24,11 @@ public:
     void Update();
     void Destroy();
     void setBackgroundColor(RGBA color);
-    
+
     Screen(int width, int height, std::string title = "slankengine game", Uint32 window_flags = 0, Uint32 renderer_flags = 0);
     ~Screen();
-
 };
+
+
+//the naming in this class is atrocious, implement a Layer class asap or this
+//whole class goes to shit real fast

@@ -1,7 +1,9 @@
 #pragma once
 
-#include "include/utility/color.h"
 #include "include/rendering/screen.h"
 #include "include/rendering/texture.h"
+
+#include "include/utility/color.h"
+#include "include/utility/slankengine_math.h"
 
 #include "include/core.h"

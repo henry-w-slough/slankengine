@@ -11,7 +11,7 @@ class Texture {
 public:
     void setSource(std::string source);
     SDL_Texture* get();
-    Texture(SDL_Renderer* renderer, float width, float height);
+    Texture(SDL_Renderer* renderer);
     ~Texture();
 
 private:
