@@ -1,6 +1,7 @@
 #include <SDL3/SDL.h>
 #include "rendering/screen.h"
 #include "utility/color.h"
+#include <glad/glad.h>
 
 
 Screen::Screen(int width, int height, std::string title, Uint32 window_flags, Uint32 renderer_flags): 
@@ -24,13 +25,13 @@ void Screen::Update() {
         if (event.type == SDL_EVENT_QUIT) {
             isRunning = false;
         }
-        
-        //drawing backgroundColor for screen refresh
-        SDL_SetRenderDrawColor(renderer, backgroundColor.red, backgroundColor.green, backgroundColor.blue, backgroundColor.alpha);
-        SDL_RenderClear(renderer);
-
-        SDL_RenderPresent(renderer);
     }
+
+    //drawing backgroundColor for screen refresh
+    SDL_SetRenderDrawColor(renderer, backgroundColor.red, backgroundColor.green, backgroundColor.blue, backgroundColor.alpha);
+    SDL_RenderClear(renderer);
+
+    SDL_RenderPresent(renderer);
 }
 
 
@@ -44,3 +45,5 @@ void Screen::Destroy() {
 void Screen::setBackgroundColor(RGBA color) {
     backgroundColor = color;
 }
+
+
