@@ -1,16 +1,15 @@
 #include <slankengine/slankengine.h>
 #include <iostream>
 
+
 int main() {
 
-    Screen screen(900, 900);
-    
-    while (screen.isRunning) {
-
-
-        screen.Update();
-        screen.setBackgroundColor(RGBA{std::rand() % (255 - 1 + 1) + 1, std::rand() % (255 - 1 + 1) + 1, std::rand() % (255 - 1 + 1) + 1});
+    if (!slankengine::init()) {
+        std::cout << "Failed to initialize slankengine!" << std::endl;
+        return -1;
     }
+
+    Screen screen(800, 800, SDL_RENDERER_VSYNC_ADAPTIVE);
 
     return 0;
 } 

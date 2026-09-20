@@ -2,8 +2,8 @@
 
 
 struct RGBA {
-    int red = 0;
-    int green = 0;
-    int blue = 0;
-    int alpha = 0;
+    float red = 0.0f;
+    float green = 0.0f;
+    float blue = 0.0f;
+    float alpha = 0.0f;
 };

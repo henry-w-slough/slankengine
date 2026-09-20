@@ -9,6 +9,7 @@
 
 class Screen {
 
+
 public:
 
     const int width;
@@ -18,14 +19,21 @@ public:
 
     RGBA backgroundColor{255, 255, 255, 255};
 
-    SDL_Window* window = nullptr;
-    SDL_Renderer* renderer = nullptr;
+    void update();
+    void destroy();
 
-    void Update();
-    void Destroy();
-    void setBackgroundColor(RGBA color);
+    void setBackgroundColor(const RGBA color);
+    void setTitle(std::string title);
 
-    Screen(int width, int height, std::string title = "slankengine game", Uint32 window_flags = 0, Uint32 renderer_flags = 0);
+    Screen(const int width, const int height, Uint32 windowFlags = 0);
     ~Screen();
+
+
+private:
+
+    SDL_Window* window = nullptr;
+    SDL_GLContext context = nullptr;
+
+    void clearWindow();
 
 };
