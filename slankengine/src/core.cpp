@@ -14,15 +14,6 @@ namespace slankengine {
             return false;
         }
 
-        // Optional: failures are logged but don't fail init.
-        if (engineFlags != 0 && !SDL_InitSubSystem(engineFlags)) {
-            return false;
-        }
-
-        if (!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress)) {
-            return false;
-        }
-
         return true;
     }
 

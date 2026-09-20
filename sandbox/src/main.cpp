@@ -9,7 +9,11 @@ int main() {
         return -1;
     }
 
-    Screen screen(800, 800, SDL_RENDERER_VSYNC_ADAPTIVE);
+    Screen screen(800, 800);
+
+    while (screen.isRunning) {
+        screen.update();
+    } 
 
     return 0;
 } 
