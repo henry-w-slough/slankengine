@@ -3,13 +3,13 @@
 
 
 int main() {
-
+ 
 
     if (!slankengine::init()) {
         std::cout << "Failed to initialize slankengine!" << std::endl;
         return -1;
-    }   
-
+    }
+    
     
     Screen screen(800, 800);
 
