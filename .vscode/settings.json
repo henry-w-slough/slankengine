@@ -1,6 +1,6 @@
 {
     "C_Cpp.default.compilerPath": "/usr/bin/clang++",
-    "cmake.sourceDirectory": "C:/Users/Henry S/projects/slankengine",
+    "cmake.sourceDirectory": "/Users/henryslough/projects/slankengine",
     "workbench.reduceMotion": false,
     "editor.accessibilitySupport": "off",
     "animations.Command-Palette": "None"

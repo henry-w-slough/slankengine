@@ -3,8 +3,7 @@
 
 
 int main() {
- 
-
+    
     if (!slankengine::init()) {
         std::cout << "Failed to initialize slankengine!" << std::endl;
         return -1;
@@ -12,6 +11,7 @@ int main() {
     
     
     Screen screen(800, 800);
+    screen.backgroundColor = Color{1.0f, 1.0f, 1.0f, 1.0f};
 
 
     while (screen.isRunning) {

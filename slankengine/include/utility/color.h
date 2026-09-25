@@ -3,13 +3,11 @@
 
 
 /**
- * Basic color format used engine-wide.
- * 
- * All color values are floats between 0.0 and 1.0.
+ * Basic color format for RGBA type colors. Values are floats between 0.0f and 1.0f
  */
-struct RGBA {
+struct Color {
     float red = 0.0f;
     float green = 0.0f;
     float blue = 0.0f;
-    float alpha = 0.0f;
+    float alpha = 1.0f;
 };

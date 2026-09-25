@@ -17,15 +17,14 @@ public:
     std::string title;
     bool isRunning = true;
 
-    RGBA backgroundColor{0.1f, 0.1f, 0.1f, 1.0f};
+    Color backgroundColor{1.0f, 1.0f, 1.0f, 1.0f};
 
     void update();
     void destroy();
 
-    void setBackgroundColor(const RGBA color);
     void setTitle(std::string title);
 
-    Screen(const int width, const int height, Uint32 windowFlags = 0);
+    Screen(const int width, const int height, Uint32 windowFlags = SDL_WINDOW_OPENGL);
     ~Screen();
 
 
@@ -35,5 +34,4 @@ private:
     SDL_GLContext context = nullptr;
 
     void clearWindow();
-
 };
