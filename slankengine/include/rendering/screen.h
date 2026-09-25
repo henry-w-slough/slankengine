@@ -17,7 +17,7 @@ public:
     std::string title;
     bool isRunning = true;
 
-    RGBA backgroundColor{255, 255, 255, 255};
+    RGBA backgroundColor{0.1f, 0.1f, 0.1f, 1.0f};
 
     void update();
     void destroy();
