@@ -5,6 +5,14 @@ project(slankengine LANGUAGES C CXX)
 find_package(SDL3 CONFIG REQUIRED)
 find_package(SDL3_image CONFIG REQUIRED)
 
+
+FetchContent_Declare(
+    glm
+    GIT_REPOSITORY https://github.com/g-truc/glm.git
+    GIT_TAG 1.0.1        # pin a specific release
+)
+FetchContent_MakeAvailable(glm)
+
 # ==============================================================================
 # 1. CREATE AND CONFIG GLAD FIRST
 # ==============================================================================

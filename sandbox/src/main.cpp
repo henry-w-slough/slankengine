@@ -9,9 +9,8 @@ int main() {
         return -1;
     }
     
-    
     Screen screen(800, 800);
-    screen.backgroundColor = Color{1.0f, 1.0f, 1.0f, 1.0f};
+    screen.backgroundColor = Color{0.2f, 0.2f, 0.4f};
 
 
     while (screen.isRunning) {
