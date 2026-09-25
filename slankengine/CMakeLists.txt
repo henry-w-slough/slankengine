@@ -5,14 +5,6 @@ project(slankengine LANGUAGES C CXX)
 find_package(SDL3 CONFIG REQUIRED)
 find_package(SDL3_image CONFIG REQUIRED)
 
-
-FetchContent_Declare(
-    glm
-    GIT_REPOSITORY https://github.com/g-truc/glm.git
-    GIT_TAG 1.0.1        # pin a specific release
-)
-FetchContent_MakeAvailable(glm)
-
 # ==============================================================================
 # 1. CREATE AND CONFIG GLAD FIRST
 # ==============================================================================
@@ -34,6 +26,17 @@ add_library(slankengine
     src/core.cpp
     src/rendering/screen.cpp
 )
+
+include(FetchContent)
+
+FetchContent_Declare(SDL3 GIT_REPOSITORY https://github.com/libsdl-org/SDL.git GIT_TAG release-3.2.0)
+FetchContent_Declare(glm  GIT_REPOSITORY https://github.com/g-truc/glm.git     GIT_TAG 1.0.1)
+
+FetchContent_MakeAvailable(SDL3 glm)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE SDL3::SDL3 glm::glm)
+
+
 
 target_include_directories(slankengine
     PUBLIC

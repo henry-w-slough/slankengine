@@ -1,6 +1,7 @@
 #pragma once
 
-#include <cstdint>
+#include <vector>
+#include "vertex.h"
 
 
 class Mesh {
@@ -9,6 +10,8 @@ public:
 
     Mesh();
     ~Mesh();
+
+    void addVertices(std::vector<Vertex> vertices);
 
 private:
 
