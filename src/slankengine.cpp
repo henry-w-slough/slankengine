@@ -1,22 +1,22 @@
+#include <slankengine/slankengine.h>
 #include <SDL3/SDL.h>
-#include <glad/glad.h>
-#include <iostream>
-
-#include "core.h"
 
 
-namespace slankengine {
+namespace slankengine { 
+
+    
+    bool isInitialized = false;
 
 
-    bool init(Uint32 sdl2_flags) {
-        // Video also starts event subsystem (Fixed for SDL3 bool return value)
-        if (!SDL_Init(SDL_INIT_VIDEO | sdl2_flags)) {
-            std::cout << "Slankengine initialization failed during SDL setup: " << std::endl;
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Couldn't initialize SDL: %s", SDL_GetError());
+    bool init() {
+
+        //SDL3 initialization
+        if (!SDL_Init(SDL_INIT_VIDEO)) {
+            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Slankengine initialization failed: couldn't initialize SDL: %s", SDL_GetError());      
             return false;
         }
 
-        // Setting OpenGL attributes globally
+        //Global attributes for OpenGL
         SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
         SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
         SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
@@ -24,12 +24,19 @@ namespace slankengine {
         SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
         SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
         
+        isInitialized = true;
         return true;
     }
 
     
-    void shutdown() {
+    void deinit() {
+
+        if (isInitialized) {
+            return;
+        }
+        
         SDL_Quit();
     }
-
+    
 }
+
