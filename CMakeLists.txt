@@ -49,7 +49,8 @@ target_include_directories(glad PRIVATE external/glad/include)
 
 
 add_library(slankengine
-    src/slankengine.cpp
+    src/slankengine/core.cpp
+    src/window/window.cpp
 )
 
 target_include_directories(slankengine PUBLIC include)

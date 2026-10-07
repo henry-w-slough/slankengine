@@ -1,4 +1,3 @@
-#include <slankengine/slankengine.h>
 #include <SDL3/SDL.h>
 
 
@@ -39,4 +38,3 @@ namespace slankengine {
     }
     
 }
-
