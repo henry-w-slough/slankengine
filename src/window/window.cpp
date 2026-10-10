@@ -24,6 +24,11 @@ namespace slankengine {
    }
 
 
+   SDL_GLContextState* Window::getContext() {
+      return context;
+   }
+
+
    Window::Window(const int width, const int height):
       window(SDL_CreateWindow(title.c_str(), width, height, SDL_WINDOW_OPENGL)),
       context(SDL_GL_CreateContext(window)) {};

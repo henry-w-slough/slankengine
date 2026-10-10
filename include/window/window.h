@@ -2,6 +2,7 @@
 
 #include <string>
 
+
 struct SDL_Window;
 struct SDL_GLContextState;
 
@@ -21,6 +22,7 @@ namespace slankengine {
 
         void setWindowTitle(const std::string title);
 
+        SDL_GLContextState* getContext();
         /*
         * The main update function for a Window. 
         * Updates isActive based off whether the user has quit.
