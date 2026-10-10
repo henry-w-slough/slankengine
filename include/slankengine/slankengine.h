@@ -1,18 +1,13 @@
-#pragma once
 
+#include "slankengine/core.h"
 
-namespace slankengine {
+#include "window/window.h"
 
-    /**
-     * Initializes all libraries used within slankengine. This function should be called
-     * before any other slankengine core, as the engine may break without initializing the libs needed.
-     * 
-     * This also sets OpenGL attributes.
-     */
-    bool init();
+#include "rendering/renderer.h"
 
-    /*
-    * Deinitializes all libraries used by slankengine.
-    */
-    void deinit();
-}
+#include "rendering/resources/vertex.h"
+#include "rendering/resources/mesh.h"
+#include "rendering/resources/mesh_data.h"
+
+#include "utility/color.h"
+#include "utility/math.h"
