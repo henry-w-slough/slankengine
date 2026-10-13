@@ -1,7 +1,3 @@
-
-#vscode
-settings.json
-
 # Prerequisites
 *.d
 
@@ -71,4 +67,3 @@ vcpkg_installed/
 Testing/
 .cache/
 
-.continue/
