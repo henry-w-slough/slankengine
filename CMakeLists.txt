@@ -52,6 +52,7 @@ add_library(slankengine
     src/slankengine/core.cpp
     src/window/window.cpp
     src/rendering/renderer.cpp
+    src/rendering/mesh.cpp
 )
 
 target_include_directories(slankengine PUBLIC include)

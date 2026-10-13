@@ -5,9 +5,9 @@
 
 #include "rendering/renderer.h"
 
-#include "rendering/resources/vertex.h"
-#include "rendering/resources/mesh.h"
-#include "rendering/resources/mesh_data.h"
+#include "rendering/vertex.h"
+#include "rendering/mesh.h"
+#include "rendering/mesh_data.h"
 
 #include "utility/color.h"
 #include "utility/math.h"
