@@ -2,7 +2,6 @@
 
 #include "rendering/mesh.h"
 #include "rendering/mesh_data.h"
-#include "rendering/gl_convert.h"
 
 
 namespace slankengine {
@@ -29,7 +28,7 @@ namespace slankengine {
         }
 
         //binding attributes
-        
+
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, position));
         glEnableVertexAttribArray(0);
 
