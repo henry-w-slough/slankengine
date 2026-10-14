@@ -39,7 +39,11 @@ namespace slankengine {
         
         DrawMode drawMode;
         BufferUsage bufferUsage;
-    };
+    };    
+
+
+    unsigned int toGL(DrawMode mode);
+    unsigned int toGL(BufferUsage usage);
 
 }
 
