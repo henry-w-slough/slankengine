@@ -16,6 +16,16 @@ namespace slankengine {
          }
       }
    }  
+   
+
+   int Window::getWidth() {
+      return width;
+   }
+
+
+   int Window::getHeight() {
+      return height;
+   }
 
 
    void Window::setWindowTitle(const std::string title) {
@@ -31,7 +41,15 @@ namespace slankengine {
 
    Window::Window(const int width, const int height):
       window(SDL_CreateWindow(title.c_str(), width, height, SDL_WINDOW_OPENGL)),
-      context(SDL_GL_CreateContext(window)) {};
+      context(SDL_GL_CreateContext(window)) {
+
+         SDL_GL_MakeCurrent(window, context);
+
+         //glad initialization check
+         if (!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress)) {
+            
+         }
+      };
 
 
    Window::~Window() {
