@@ -1,7 +1,8 @@
+#include "window/window.h"
+
+#include <iostream>
 #include <SDL3/SDL.h>
 #include <glad/glad.h>
-
-#include "window/window.h"
 
 
 namespace slankengine {
@@ -44,20 +45,18 @@ namespace slankengine {
       context(SDL_GL_CreateContext(window)) {
 
          SDL_GL_MakeCurrent(window, context);
-
-         //glad initialization check
-         if (!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress)) {
-            
-         }
       };
 
 
    Window::~Window() {
 
-      SDL_DestroyWindow(window);
+      if (context != nullptr && !SDL_GL_DestroyContext(context)) {
+         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,
+                      "Slankengine GL context destruction failed: %s", SDL_GetError());
+      }
 
-      if (!SDL_GL_DestroyContext(context)) {
-         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Slankengine window destruction failed: %s", SDL_GetError());      
+      if (window != nullptr) {
+         SDL_DestroyWindow(window);
       }
       
    };

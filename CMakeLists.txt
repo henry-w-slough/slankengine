@@ -25,6 +25,24 @@ if(NOT TARGET SDL3::SDL3)
 endif()
 
 
+if(NOT TARGET spdlog::spdlog)
+    find_package(spdlog CONFIG QUIET)
+
+    if(NOT spdlog_FOUND)
+        if(ENGINE_FETCH_DEPS)
+            FetchContent_Declare(
+                spdlog
+                GIT_REPOSITORY https://github.com/gabime/spdlog.git
+                GIT_TAG v1.15.3
+            )
+            FetchContent_MakeAvailable(spdlog)
+        else()
+            message(FATAL_ERROR "SLANKENGINE FAILURE: spdlog not found, install it or set ENGINE_FETCH_DEPS=ON.")
+        endif()
+    endif()
+endif()
+
+
 if(NOT TARGET glm::glm)
     find_package(glm CONFIG QUIET)
 
@@ -59,7 +77,7 @@ add_library(slankengine
 target_include_directories(slankengine PUBLIC include)
 
 target_link_libraries(slankengine
-    PUBLIC  glm::glm          # glm types appear in public headers
+    PUBLIC  glm::glm spdlog::spdlog # types from public headers
     PRIVATE SDL3::SDL3 glad   # hidden from the game
 )
 
