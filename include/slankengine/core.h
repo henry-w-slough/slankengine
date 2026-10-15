@@ -10,7 +10,7 @@ namespace slankengine {
      * Note that this function DOES NOT initialize glad, as that is used only
      * in the rendering core, but it does set the OpenGL attributes using SDL.
      */
-    void init();
+    bool init();
 
     /*
     * Deinitializes all libraries used by slankengine.

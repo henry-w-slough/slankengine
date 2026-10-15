@@ -1,12 +1,10 @@
 #include <string>
-#include <spdlog/spdlog.h>
 
 
+/* Simple logging module made for consistent global error, warning, and
+ * other information logging.
+ */
 namespace slankengine::logging {
-
-    void add_log();
-    void get_logs();
-    void clear_log();
 
     enum class Severity {
         TRACE,
@@ -15,5 +13,11 @@ namespace slankengine::logging {
         WARNING,
         ERROR
     };
+
+    /**
+     * Logs the given message immediately to the console.
+     * The severity given determines what log type is outputted.
+     */
+    void log(const std::string message, const Severity severity);
 
 }

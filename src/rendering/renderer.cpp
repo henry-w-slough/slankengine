@@ -14,7 +14,6 @@ namespace slankengine {
 
             if (!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress)) {
                 SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SLANKENGINE FAILURE: Failed to load OpenGL functions through glad.");
-                throw std::runtime_error("Slankengine renderer initialization failed: GLAD initialization failed.");
             }
         }
 

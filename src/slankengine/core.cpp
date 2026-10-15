@@ -1,6 +1,8 @@
 #include <SDL3/SDL.h>
 #include <iostream>
 
+#include "utility/logging.h"
+
 
 namespace slankengine { 
 
@@ -8,11 +10,12 @@ namespace slankengine {
     bool isInitialized = false;
 
 
-    void init() {
+    bool init() {
 
         //SDL3 initialization
         if (!SDL_Init(SDL_INIT_VIDEO)) {
-            throw std::runtime_error("Slankengine initialization failed: Failed to initialize SDL library.");
+            logging::log("SLANKENGINE FAILURE: Failed to initialize SDL Video subsystem.", logging::Severity::ERROR);
+            return false;
         }
 
         //Global attributes for OpenGL
@@ -24,6 +27,8 @@ namespace slankengine {
         SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
         
         isInitialized = true;
+        
+        return true;
     }
 
     

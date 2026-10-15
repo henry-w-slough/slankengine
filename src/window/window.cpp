@@ -1,5 +1,7 @@
 #include "window/window.h"
 
+#include "utility/logging.h"
+
 #include <iostream>
 #include <SDL3/SDL.h>
 #include <glad/glad.h>
@@ -50,14 +52,16 @@ namespace slankengine {
 
    Window::~Window() {
 
-      if (context != nullptr && !SDL_GL_DestroyContext(context)) {
-         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,
-                      "Slankengine GL context destruction failed: %s", SDL_GetError());
+      //checking if the window or gl context haven't been init yet
+      if (window == nullptr || context == nullptr) {
+         return;
       }
 
-      if (window != nullptr) {
-         SDL_DestroyWindow(window);
+      if (!SDL_GL_DestroyContext(context)) {
+         logging::log(std::string("SLANKENGINE FAILURE: Failed to destroy context during Window destruction: ") + SDL_GetError(), logging::Severity::ERROR);
       }
+
+      SDL_DestroyWindow(window);
       
    };
 

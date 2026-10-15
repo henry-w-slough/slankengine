@@ -11,3 +11,4 @@
 
 #include "utility/color.h"
 #include "utility/math.h"
+#include "utility/logging.h"

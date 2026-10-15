@@ -68,6 +68,7 @@ target_include_directories(glad PUBLIC external/glad/include)
 
 add_library(slankengine
     src/slankengine/core.cpp
+    src/utility/logging.cpp
     src/window/window.cpp
     src/rendering/renderer.cpp
     src/rendering/mesh_data.cpp
