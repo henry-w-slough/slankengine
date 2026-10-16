@@ -6,7 +6,7 @@
 #include "mesh_data.h"
 
 
-namespace slankengine {
+namespace slankengine::rendering {
 
 
     class Mesh {

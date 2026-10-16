@@ -7,7 +7,7 @@ struct SDL_Window;
 struct SDL_GLContextState;
 
 
-namespace slankengine {
+namespace slankengine::window {
 
 
     /**

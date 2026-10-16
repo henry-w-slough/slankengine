@@ -7,7 +7,7 @@
 #include <glad/glad.h>
 
 
-namespace slankengine {
+namespace slankengine::window {
 
 
    void Window::update() {

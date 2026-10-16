@@ -3,7 +3,7 @@
 struct SDL_GLContextState;
 
 
-namespace slankengine {
+namespace slankengine::rendering {
 
 
     class Renderer {

@@ -3,7 +3,7 @@
 #include <glad/glad.h>
 
 
-namespace slankengine {
+namespace slankengine::rendering {
 
 
     GLenum toGL(DrawMode mode) {

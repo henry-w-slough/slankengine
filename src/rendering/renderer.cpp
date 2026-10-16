@@ -6,7 +6,7 @@
 #include <iostream>
 
 
-namespace slankengine {
+namespace slankengine::rendering {
 
     Renderer::Renderer(SDL_GLContext context) :
         context(context) {

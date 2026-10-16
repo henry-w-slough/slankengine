@@ -4,12 +4,12 @@
 #include "utility/math.h"
 
 
-namespace slankengine {
+namespace slankengine::rendering {
     
     /*Representation of a vertex on the screen
     by the data that defines it. */
     struct Vertex {
-        Vector3 position;
+        math::Vector3 position;
         Color color;    
     };
 

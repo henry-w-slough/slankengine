@@ -5,7 +5,7 @@
 #include "utility/logging.h"
 
 
-namespace slankengine { 
+namespace slankengine::core { 
 
     
     bool isInitialized = false;

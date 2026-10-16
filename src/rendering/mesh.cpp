@@ -4,7 +4,7 @@
 #include "rendering/mesh_data.h"
 
 
-namespace slankengine {
+namespace slankengine::rendering {
 
 
     Mesh::Mesh(const MeshData data) {

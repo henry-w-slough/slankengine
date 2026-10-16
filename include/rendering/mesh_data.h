@@ -5,7 +5,7 @@
 #include "vertex.h"
 
 
-namespace slankengine {
+namespace slankengine::rendering {
 
     /*
     * The methods of drawing vertices on the screen.
