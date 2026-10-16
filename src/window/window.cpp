@@ -18,6 +18,9 @@ namespace slankengine::window {
                isActive = false;
          }
       }
+
+      //swapping buffer.
+      SDL_GL_SwapWindow(window);
    }  
    
 
@@ -39,6 +42,11 @@ namespace slankengine::window {
 
    SDL_GLContextState* Window::getContext() {
       return context;
+   }
+
+
+   SDL_Window* Window::getWindow() {
+      return window;
    }
 
 

@@ -26,6 +26,7 @@ namespace slankengine::window {
         int getHeight();
 
         SDL_GLContextState* getContext();
+        SDL_Window* getWindow();
 
         /*
         * The main update function for a Window. 
