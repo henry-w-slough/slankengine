@@ -12,11 +12,11 @@ namespace slankengine::logging {
         //I can move on with my life
         switch (severity) {
 
-            case(Severity::INFO) : spdlog::info(message);
-            case(Severity::DEBUG) : spdlog::debug(message);
-            case(Severity::WARNING) : spdlog::warn(message);
-            case(Severity::ERROR) : spdlog::error(message);
-            case(Severity::TRACE) : spdlog::trace(message);
+            case(Severity::INFO) : spdlog::info(message); break;
+            case(Severity::DEBUG) : spdlog::debug(message); break;
+            case(Severity::WARNING) : spdlog::warn(message); break;
+            case(Severity::ERROR) : spdlog::error(message); break;
+            case(Severity::TRACE) : spdlog::trace(message); break;
 
         }
     }

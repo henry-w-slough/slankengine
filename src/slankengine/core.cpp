@@ -1,5 +1,6 @@
 #include <SDL3/SDL.h>
 #include <iostream>
+#include <spdlog/spdlog.h>
 
 #include "utility/logging.h"
 
@@ -11,6 +12,9 @@ namespace slankengine {
 
 
     bool init() {
+
+        //for logging
+        spdlog::set_level(spdlog::level::trace);
 
         //SDL3 initialization
         if (!SDL_Init(SDL_INIT_VIDEO)) {
