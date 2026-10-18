@@ -70,6 +70,15 @@ namespace slankengine::rendering {
     }
 
 
+    void Renderer::setRenderMethod(const RenderMethod method) {
+        switch (method) {
+            case(RenderMethod::POINTS): glPolygonMode(GL_FRONT_AND_BACK, GL_POINT); break;
+            case(RenderMethod::FRAME): glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); break;
+            default: GL_POINT;
+        }
+    }
+
+
 }
 
 

@@ -14,6 +14,13 @@ struct DrawCommand;
 namespace slankengine::rendering {
 
 
+    enum class RenderMethod {
+        FILL,
+        FRAME,
+        POINTS
+    };
+
+
     class Renderer {
 
 
@@ -30,6 +37,8 @@ namespace slankengine::rendering {
 
         /*Queues a new request to draw with the given Mesh and Material.*/
         void queue(Mesh& mesh, Material& material);
+
+        void setRenderMethod(const RenderMethod method);
 
 
     private:
