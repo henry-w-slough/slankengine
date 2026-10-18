@@ -36,12 +36,17 @@ namespace slankengine::rendering {
             ebo = 0;
         }
 
-        //binding attributes
+        //binding attributes, must be done while the vao is bound
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, position));
         glEnableVertexAttribArray(0);
 
         glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, color));
         glEnableVertexAttribArray(1);
+
+        vertexCount = data.vertices.size();
+        indexCount = data.indices.size();
+
+        drawMode = data.drawMode;
 
         unbind();
     }
@@ -56,6 +61,16 @@ namespace slankengine::rendering {
         if (ebo != 0) {
             glDeleteBuffers(1, &ebo);
         }
+    }
+
+
+    int Mesh::getVertexCount() {
+        return vertexCount;
+    }
+
+
+    int Mesh::getIndexCount() {
+        return indexCount;
     }
 
 

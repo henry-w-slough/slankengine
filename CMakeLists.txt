@@ -75,7 +75,9 @@ add_library(slankengine
     src/rendering/mesh.cpp
     src/rendering/shader.cpp
     src/rendering/shader_data.cpp
+    src/rendering/material.cpp
 )
+
 
 target_include_directories(slankengine PUBLIC include)
 

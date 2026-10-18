@@ -1,3 +1,7 @@
+#pragma once
+
+#include "shader.h"
+#include "material_data.h"
 
 
 namespace slankengine::rendering {
@@ -5,11 +9,17 @@ namespace slankengine::rendering {
     class Material {
 
     public:
-        Material();
-        ~Material();
-    private:
-        
+        Material(const MaterialData data);
 
+        void use();
+
+        unsigned int getShaderProgram();
+
+    private:
+        Shader vertexShader;
+        Shader fragmentShader;
+
+        unsigned int shaderProgram = 0;
     };
 
 }

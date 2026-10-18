@@ -7,10 +7,12 @@ namespace slankengine::rendering {
 
     public:
 
-        Shader(const ShaderData data, ShaderType type);
+        Shader(ShaderData data);
         ~Shader();
 
         void compile();
+
+        unsigned int getShader();
 
     private:
         unsigned int shader;

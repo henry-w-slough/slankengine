@@ -6,7 +6,7 @@
 
 namespace slankengine::rendering {
 
-    GLenum toGl(const ShaderType type) {
+    GLenum toGL(const ShaderType type) {
 
         switch (type) {
             case ShaderType::VERTEX: return GL_VERTEX_SHADER;

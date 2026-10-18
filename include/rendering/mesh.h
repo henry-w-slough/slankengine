@@ -15,13 +15,21 @@ namespace slankengine::rendering {
         Mesh(const MeshData meshData);
         ~Mesh();
 
-        unsigned int vao;
-        unsigned int vbo;
-        unsigned int ebo;
+        unsigned int vao = 0;
+        unsigned int vbo = 0;
+        unsigned int ebo = 0;
 
+        int getVertexCount();
+        int getIndexCount();
+
+        DrawMode drawMode;
+    
     private:
         void bind();
         void unbind();
+
+        int vertexCount;
+        int indexCount;
     };
 
 

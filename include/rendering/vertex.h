@@ -5,6 +5,8 @@
 
 
 namespace slankengine::rendering {
+
+    //The layout of attributes for vertex must match Vertex Shader template
     
     /*Representation of a vertex on the screen
     by the data that defines it. */
