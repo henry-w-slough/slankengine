@@ -11,18 +11,17 @@ namespace slankengine::rendering {
 
     class Mesh {
 
-
     public:
         Mesh(const MeshData meshData);
         ~Mesh();
 
-    private:
-        void bind();
-        void unbind();
-        
         unsigned int vao;
         unsigned int vbo;
         unsigned int ebo;
+
+    private:
+        void bind();
+        void unbind();
     };
 
 
