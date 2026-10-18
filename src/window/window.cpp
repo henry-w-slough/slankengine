@@ -1,10 +1,13 @@
+#include "window/window.h"
+
+#include "utility/logging.h"
+
+#include <iostream>
 #include <SDL3/SDL.h>
 #include <glad/glad.h>
 
-#include "window/window.h"
 
-
-namespace slankengine {
+namespace slankengine::window {
 
 
    void Window::update() {
@@ -15,7 +18,20 @@ namespace slankengine {
                isActive = false;
          }
       }
+
+      //swapping buffer.
+      SDL_GL_SwapWindow(window);
    }  
+   
+
+   int Window::getWidth() {
+      return width;
+   }
+
+
+   int Window::getHeight() {
+      return height;
+   }
 
 
    void Window::setWindowTitle(const std::string title) {
@@ -29,18 +45,31 @@ namespace slankengine {
    }
 
 
+   SDL_Window* Window::getWindow() {
+      return window;
+   }
+
+
    Window::Window(const int width, const int height):
       window(SDL_CreateWindow(title.c_str(), width, height, SDL_WINDOW_OPENGL)),
-      context(SDL_GL_CreateContext(window)) {};
+      context(SDL_GL_CreateContext(window)) {
+
+         SDL_GL_MakeCurrent(window, context);
+      };
 
 
    Window::~Window() {
 
-      SDL_DestroyWindow(window);
+      //checking if the window or gl context haven't been init yet
+      if (window == nullptr || context == nullptr) {
+         return;
+      }
 
       if (!SDL_GL_DestroyContext(context)) {
-         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Slankengine window destruction failed: %s", SDL_GetError());      
+         logging::log(std::string("SLANKENGINE FAILURE: Failed to destroy context during Window destruction: ") + SDL_GetError(), logging::Severity::ERROR);
       }
+
+      SDL_DestroyWindow(window);
       
    };
 

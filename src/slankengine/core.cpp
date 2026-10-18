@@ -1,7 +1,11 @@
 #include <SDL3/SDL.h>
+#include <iostream>
+#include <spdlog/spdlog.h>
+
+#include "utility/logging.h"
 
 
-namespace slankengine { 
+namespace slankengine::core { 
 
     
     bool isInitialized = false;
@@ -9,9 +13,12 @@ namespace slankengine {
 
     bool init() {
 
+        //for logging
+        spdlog::set_level(spdlog::level::trace);
+
         //SDL3 initialization
         if (!SDL_Init(SDL_INIT_VIDEO)) {
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Slankengine initialization failed: couldn't initialize SDL: %s", SDL_GetError());      
+            logging::log("SLANKENGINE FAILURE: Failed to initialize SDL Video subsystem.", logging::Severity::ERROR);
             return false;
         }
 
@@ -24,13 +31,14 @@ namespace slankengine {
         SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
         
         isInitialized = true;
+        
         return true;
     }
 
     
     void deinit() {
 
-        if (isInitialized) {
+        if (!isInitialized) {
             return;
         }
         

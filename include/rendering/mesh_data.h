@@ -5,7 +5,7 @@
 #include "vertex.h"
 
 
-namespace slankengine {
+namespace slankengine::rendering {
 
     /*
     * The methods of drawing vertices on the screen.
@@ -39,7 +39,11 @@ namespace slankengine {
         
         DrawMode drawMode;
         BufferUsage bufferUsage;
-    };
+    };    
+
+
+    unsigned int toGL(DrawMode mode);
+    unsigned int toGL(BufferUsage usage);
 
 }
 

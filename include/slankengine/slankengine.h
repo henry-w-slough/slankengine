@@ -8,6 +8,9 @@
 #include "rendering/vertex.h"
 #include "rendering/mesh.h"
 #include "rendering/mesh_data.h"
+#include "rendering/material.h"
+#include "rendering/material_data.h"
 
 #include "utility/color.h"
 #include "utility/math.h"
+#include "utility/logging.h"
